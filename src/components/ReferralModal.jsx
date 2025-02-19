@@ -13,6 +13,7 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
 const ReferralModal = ({ open, handleClose }) => {
@@ -45,7 +46,7 @@ const ReferralModal = ({ open, handleClose }) => {
     const finalData = { ...formData, ...data };
   
     try {
-      const response = await axios.post("http://localhost:5000/api/referrals", finalData);
+      const response = await axios.post(`${API_BASE_URL}/api/referrals`, finalData);
       setSuccessMessage(response.data.message || "Referral submitted successfully!");
     } catch (error) {
       console.error("Error submitting referral:", error.response?.data);
