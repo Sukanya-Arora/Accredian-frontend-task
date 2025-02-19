@@ -1,5 +1,5 @@
 import React from "react";
-import ReferralModal from "../Components/ReferralModal";
+import ReferralModal from "./ReferralModal";
 import { useState } from "react";
 
 
